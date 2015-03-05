@@ -5,7 +5,7 @@ module.exports = function(gulp, plugins, config, params) {
     });
 
     gulp.task('copyIndex', 'Copy index.test.html into the \'.tmp\' directory', function () {
-        return gulp.src(config.paths.app.htmlProd)
+        return gulp.src(config.paths.app.htmlDev)
             .pipe(plugins.rename('index.html'))
             .pipe(gulp.dest(config.paths.tmp.basePath));
     });
