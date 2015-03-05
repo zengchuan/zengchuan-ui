@@ -6,8 +6,9 @@ angular es6 jspm
 
 安装node.js
 
-npm install cnmp -g
+在中国你需要安装cnpm，用cnpm代替npm，这样速度会快些 npm install cnmp -g
 
+然后就是2个命令来初始化工程所有需要的环境
 cnpm install
 
 jspm install
