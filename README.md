@@ -1,9 +1,11 @@
-Ö÷Òª¼¼Êõ£ºangular es6 jspm
+ä¸»è¦æŠ€æœ¯ï¼šangular es6 jspm
 
-Ç°ÆÚ×¼±¸£º
+å‰æœŸå‡†å¤‡ï¼š
+å®‰è£…node.js
 npm install cnmp -g
 cnpm install
+jspm install
 
-ÔËĞĞ
+è¿è¡Œ
 gulp
 
