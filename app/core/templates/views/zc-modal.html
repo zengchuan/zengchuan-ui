@@ -1,0 +1,27 @@
+<div class="modal-header" >
+    <a class="close" ng-click="zcmc.close()">×</a>
+    <h4>{{zcmc.modalOptions.headerText}}</h4>
+</div>
+<div class="modal-body" >
+    <div ng-show="!zcmc.modalOptions.showPrompt">
+        <span class="zc-modal-type" ng-class="zcmc.modalOptions.iconClass"></span>
+        <span class="zc-modal-text">{{zcmc.modalOptions.bodyText}}</span>
+    </div>
+    <div ng-show="zcmc.modalOptions.showPrompt">
+        <span class="col-md-3 col-lg-3" >{{zcmc.modalOptions.promptText}}</span>
+        <span><input type="text" class="col-md-9 col-lg-9" id="zcModalPromptText" ng-model="zcmc.modalOptions.promptData"></span>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary"   id="zcModalOkButton"
+            ng-show="zcmc.modalOptions.showConfirm"
+            ng-click="zcmc.ok();"
+            ui-keypress="{13:'zcmc.ok()'}">
+        {{zcmc.modalOptions.actionButtonText}}
+    </button>
+    <button type="button" class="btn" id="zcModalCloseButton"
+            ng-click="zcmc.close()"
+            ui-keypress="{13:'zcmc.close()'}">
+        {{zcmc.modalOptions.closeButtonText}}
+    </button>
+</div>

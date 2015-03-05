@@ -1,0 +1,17 @@
+{
+  "TXT_ZC_MODAL_INFO": "信息",
+  "TXT_ZC_MODAL_OK": "成功",
+  "TXT_ZC_MODAL_QUESTION": "选择",
+  "TXT_ZC_MODAL_WARN": "警告",
+  "TXT_ZC_MODAL_CLOSE": "关闭",
+  "TXT_ZC_MODAL_CONFIRM": "确定",
+  "TXT_ZC_MODAL_CONFIRM_YES": "  是  ",
+  "TXT_ZC_MODAL_CONFIRM_NO": "  否  ",
+  "TXT_ZC_MODAL_HEADER": "执行",
+  "TXT_ZC_MODAL_PROMPT": "提示输入",
+  "TXT_ZC_MODAL_PROMPT_INFO": "请输入",
+  "TXT_ZC_MODAL_TEXT": "确定要执行吗?" ,
+  "TXT_ZC_MODAL_DEFAULT_OK": "保存成功！",
+  "TXT_ZC_MODAL_DEFAULT_WARN": "保存失败！",
+  "TXT_ZC_MODAL_DEFAULT_DELETE": "确定要删除吗？"
+}

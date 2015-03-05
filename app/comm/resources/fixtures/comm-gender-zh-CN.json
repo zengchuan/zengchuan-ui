@@ -1,0 +1,32 @@
+[
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "1"
+    },
+    "name": "男",
+    "inputCode": "N",
+    "memo": null,
+    "sortNo": 1
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "2"
+    },
+    "name": "女",
+    "inputCode": "N",
+    "memo": null,
+    "sortNo": 2
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "9"
+    },
+    "name": "其他",
+    "inputCode": "QT",
+    "memo": null,
+    "sortNo": 9
+  }
+]

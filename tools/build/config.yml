@@ -1,0 +1,49 @@
+# Paths
+paths:
+  gulpfile: 'gulpfile.js'
+  app:
+    basePath: 'app/'
+    fonts:
+      - 'app/**/*.{eot,svg,ttf,woff}'
+      - 'jspm_packages/**/*.{eot,svg,ttf,woff}'
+    styles: 'app/**/*.scss'
+    images: 'app/**/*.{png,gif,jpg,jpeg}'
+    i18n: 'app/**/*i18n/*.json'
+    config:
+      dev: 'app/core/configs/ZCConfig.dev.js'
+    scripts:
+      - 'app/**/*.js'
+      - '!app/**/*.spec.js'
+    htmlDev: 'app/index.test.html'
+    htmlProd: 'app/index.prod.html'
+    templates: 'app/**/*.html'
+  data:
+    basePath: 'test/datas'
+    mock: 'test/datas/**/*.mock.js'
+  test:
+    basePath: 'test/'
+    protractor: 'test/protractor.conf.js'
+    e2e: 'test/e2e/**/*.e2e.js'
+  tmp:
+    basePath: '.tmp/'
+    styles: '.tmp/core/styles/'
+    scripts: '.tmp/scripts/'
+  build:
+    basePath: 'build/'
+    dist:
+      basePath: 'build/dist/'
+      fonts: 'build/dist/fonts/'
+      images: 'build/dist/images/'
+      styles: 'build/dist/styles/'
+      scripts: 'build/dist/scripts/'
+    docs: 'build/docs/'
+
+urls:
+  devUrl: 'http://127.0.0.1:9090'
+  prodUrl: 'http://127.0.0.1:8080'
+
+
+
+
+
+

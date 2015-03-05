@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Zengchuan</title>
+        <meta name="description" content="prod">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- build:css(.tmp) styles/main.min.css -->
+        <!-- TODO: (martin) the bootstrap.css & font awesome should be load in vendor.js but how I make sure that vendor css files are loaded before main.css as vendor css files are load through JS -->
+        <link rel="stylesheet" href="../jspm_packages/github/fyockm/bootstrap-css-only@3.3.2/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../jspm_packages/npm/font-awesome@4.3.0/css/font-awesome.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/angular-ui/ui-select@0.9.9/select.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/components/jqueryui@1.11.3/themes/smoothness/jquery-ui.css"/>
+
+        <link rel="stylesheet" href="./core/styles/zc.css" type="text/css"/>
+        <!-- endbuild -->
+    </head>
+    <body>
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <main ui-view ></main>
+
+        <!-- build:js(.) scripts/main.min.js -->
+        <script src="jspm_packages/traceur-runtime.js"></script>
+        <!-- inject:build:js -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+        <!-- build:remove -->
+        <script src="jspm_packages/system.js"></script>
+        <script src="jspm.conf.js"></script>
+        <script>
+            System.import('core/boot/bootstrap').catch(console.error.bind(console)); // make sure any errors are print to console
+        </script>
+        <!-- endbuild -->
+    </body>
+</html>

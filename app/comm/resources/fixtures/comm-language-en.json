@@ -1,0 +1,29 @@
+[
+  {
+    "id": {
+      "languageId": "en",
+      "languageIdRef": "en"
+    },
+    "languageName": "English",
+    "inputCode": "ENGLISH",
+    "sortNo": 1
+  },
+  {
+    "id": {
+      "languageId": "en",
+      "languageIdRef": "zh-CN"
+    },
+    "languageName": "Chinese-Simple",
+    "inputCode": "CHINESE",
+    "sortNo": 2
+  },
+  {
+    "id": {
+      "languageId": "en",
+      "languageIdRef": "jp"
+    },
+    "languageName": "Japanese",
+    "inputCode": "JAPANESE",
+    "sortNo": 3
+  }
+]

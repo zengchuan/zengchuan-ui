@@ -1,0 +1,5 @@
+{
+    "TXT_ZC_MESSAGE_NULL": "$1不能为空！",
+    "TXT_ZC_MESSAGE_ISNUMBER": "$1不是数字！",
+    "TXT_ZC_MESSAGE_ISPOSITIVEINTEGER": "$1不是正整数！"
+}

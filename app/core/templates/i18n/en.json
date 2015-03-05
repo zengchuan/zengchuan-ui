@@ -1,0 +1,17 @@
+{
+  "TXT_ZC_MODAL_INFO": "Infomation",
+  "TXT_ZC_MODAL_OK": "Ok",
+  "TXT_ZC_MODAL_QUESTION": "Question",
+  "TXT_ZC_MODAL_WARN": "Warn",
+  "TXT_ZC_MODAL_CLOSE": "Close",
+  "TXT_ZC_MODAL_CONFIRM": "OK",
+  "TXT_ZC_MODAL_CONFIRM_YES": "Yes",
+  "TXT_ZC_MODAL_CONFIRM_NO": "No",
+  "TXT_ZC_MODAL_HEADER": "Proceed",
+  "TXT_ZC_MODAL_PROMPT": "Prompt",
+  "TXT_ZC_MODAL_PROMPT_INFO": "Please enter",
+  "TXT_ZC_MODAL_TEXT": "Perform this action?" ,
+  "TXT_ZC_MODAL_DEFAULT_OK": "Save success!",
+  "TXT_ZC_MODAL_DEFAULT_WARN": "Save failed!",
+  "TXT_ZC_MODAL_DEFAULT_DELETE": "Are you sure to delete this item?"
+}

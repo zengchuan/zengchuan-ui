@@ -1,0 +1,5 @@
+{
+    "TXT_ZC_MESSAGE_NULL": "$1 can't be null.",
+    "TXT_ZC_MESSAGE_ISNUMBER": "$1 is not number." ,
+    "TXT_ZC_MESSAGE_ISPOSITIVEINTEGER": "$1 is not positive integer."
+}

@@ -1,0 +1,69 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div zc-container>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{'TXT_LOGIN_HEADER' | translate}}</a>
+        </div>
+    </div>
+</div>
+<div>
+    <img ng-src="../../../security/login/images/author.jpg" alt="" class="img-circle zc-login-image">
+</div>
+<div zc-container class="security-login zc-body">
+    <div class="main-center" id="loginCenter">
+        <div class="absolute-center" alt="">
+            <form class="form-horizontal" role="form">
+                <div class="form-group zc-row-margin-bottom">
+                    <i class="col-md-2 col-lg-2 control-label fa fa-user "></i>
+
+                    <div class="col-md-10 col-lg-10">
+                        <input type="text" class="form-control" id="userCode"
+                               placeholder="{{'TXT_LOGIN_USER' | translate}}"
+                               ng-model="loginc.loginVO.userCode" autofocus=""/>
+                    </div>
+                </div>
+                <div class="form-group zc-row-margin-bottom">
+                    <i class="col-md-2 col-lg-2 control-label fa fa-lock "></i>
+
+                    <div class="col-md-10 col-lg-10">
+                        <input type="password" class="form-control" id="password"
+                               ng-model="loginc.loginVO.password" placeholder="{{'TXT_LOGIN_PASSWORD' | translate}}"/>
+                    </div>
+                </div>
+                <div class="form-group zc-row-margin-bottom">
+                    <i class="col-md-2 col-lg-2 control-label fa fa-filter "></i>
+
+                    <div class="col-md-10 col-lg-10">
+
+                        <ui-select ng-model="loginc.loginVO.languageId"
+                                   ng-disabled="disabled"
+                                   reset-search-input="true"
+                                   on-select="loginc.changeI18n()">
+                            <ui-select-match >{{$select.selected.languageName}}</ui-select-match>
+                            <ui-select-choices repeat="commLanguage.id.languageIdRef as commLanguage in loginc.commLanguageList | ZCSelectFilter: {languageName: $select.search, inputCode: $select.search}"
+                                               >
+                                <span ng-bind-html="commLanguage.languageName | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group zc-row-margin">
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <button type="button" class="btn btn-primary"
+                                ui-keypress="{13:'login()'}"
+                                ng-click="loginc.login()"
+                                id="loginButton"
+                                translate="TXT_LOGIN_LOGIN"></button>
+
+                        <a id="createSimpleAccountButton" ui-sref="create-simple-account({languageId: loginc.loginVO.languageId})"
+                           class="btn btn-default">{{'TXT_LOGIN_RESET' | translate }}</a>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

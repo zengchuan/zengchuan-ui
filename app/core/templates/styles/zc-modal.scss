@@ -1,0 +1,38 @@
+.zc-modal-window .modal-dialog {
+  margin: auto;
+  height: 200px;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+.zc-modal-window  .modal-dialog  .modal-content .modal-header {
+  padding: 10px 15px 10px 15px;
+  border-bottom: 1px solid #E5E5E5;
+  min-height: 16.42857143px;
+  background: #EEEEEE;
+  border-radius: 6px;
+}
+
+.zc-modal-window  .modal-dialog  .modal-content .modal-footer {
+  padding: 15px 15px 15px 15px;
+  border-bottom: 1px solid #E5E5E5;
+  min-height: 16.42857143px;
+  background: #EEEEEE;
+  border-radius: 6px;
+}
+
+.zc-modal-window  .zc-modal-type {
+  font-size: 55px;
+}
+.zc-modal-window  .zc-modal-info {
+  color: #91eead
+}
+.zc-modal-window  .zc-modal-warn {
+  color: #ee525a
+}
+
+.zc-modal-window  .zc-modal-text {
+  padding-left: 15px;
+  position: relative;
+  top: -18px;
+  font-size: 20px;
+}

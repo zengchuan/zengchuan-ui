@@ -1,0 +1,32 @@
+[
+  {
+    "id": {
+      "languageId": "en",
+      "code": "1"
+    },
+    "name": "Male",
+    "inputCode": "MALE",
+    "memo": null,
+    "sortNo": 1
+  },
+  {
+    "id": {
+      "languageId": "en",
+      "code": "2"
+    },
+    "name": "Female",
+    "inputCode": "FEMALE",
+    "memo": null,
+    "sortNo": 2
+  },
+  {
+    "id": {
+      "languageId": "en",
+      "code": "9"
+    },
+    "name": "Other",
+    "inputCode": "OTHER",
+    "memo": null,
+    "sortNo": 9
+  }
+]
