@@ -1,13 +1,12 @@
 class ZCCommDictResource {
 
-    constructor(Restangular) {
+    constructor(ZCHttpService) {
         'ngInject';
-        this.Restangular = Restangular;
+        this.ZCHttpService = ZCHttpService;
     }
 
     getCommDictByLanguageId(dictName, languageId) {
-        return this.Restangular
-            .all('comm-dict').all(dictName).all(languageId).getList();
+        return this.ZCHttpService.get('comm-dict' + '/' + dictName + '/' + languageId);
     }
 }
 

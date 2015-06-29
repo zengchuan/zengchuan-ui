@@ -2,7 +2,7 @@
 
 import login from './views/login.html!text';
 
-function SecurityRoute($stateProvider) {
+function LoginRoute($stateProvider) {
     'ngInject';
     return $stateProvider
         .state('login', {
@@ -20,4 +20,4 @@ function SecurityRoute($stateProvider) {
         ;
 }
 
-export default SecurityRoute;
+export default LoginRoute;

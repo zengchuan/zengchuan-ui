@@ -1,0 +1,19 @@
+
+
+<div class="zc-header">
+    <ul zc-container class="nav nav-pills ">
+        <li ng-repeat="menuTab in mainc.menuTabs" ng-class="mainc.getMenuActive(menuTab.isActive)">
+            <a  ng-click="mainc.showNewProgram(menuTab)" >{{menuTab.name}}</a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content ">
+
+    <div ng-repeat="menuTab in mainc.menuTabs"
+         class="tab-pane tab-pane-zc zc-border-line-top {{mainc.getMenuActive(menuTab.isActive)}}"
+         zc-height="$(window).height() - 43"
+         ui-view="{{menuTab.tabName}}" ng-show="mainc.getMenuActiveShow(menuTab.isActive)" >
+
+    </div>
+
+</div>

@@ -7,13 +7,17 @@
         <title>Zengchuan</title>
         <meta name="description" content="prod">
         <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="./security/login/images/favicon.ico">
 
         <!-- build:css(.tmp) styles/main.min.css -->
         <!-- TODO: (martin) the bootstrap.css & font awesome should be load in vendor.js but how I make sure that vendor css files are loaded before main.css as vendor css files are load through JS -->
-        <link rel="stylesheet" href="../jspm_packages/github/fyockm/bootstrap-css-only@3.3.2/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/fyockm/bootstrap-css-only@3.3.4/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/fyockm/bootstrap-css-only@3.3.4/css/bootstrap-theme.css"/>
         <link rel="stylesheet" href="../jspm_packages/npm/font-awesome@4.3.0/css/font-awesome.css"/>
-        <link rel="stylesheet" href="../jspm_packages/github/angular-ui/ui-select@0.9.9/select.css"/>
-        <link rel="stylesheet" href="../jspm_packages/github/components/jqueryui@1.11.3/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/angular-ui/ui-select@0.12.0/dist/select.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/components/jqueryui@1.11.4/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/angular-ui/ui-grid.info@3.0.0-rc.22/release/ui-grid-unstable.css"/>
+        <link rel="stylesheet" href="../jspm_packages/github/chieffancypants/angular-loading-bar@0.7.1/build/loading-bar.css"/>
 
         <link rel="stylesheet" href="./core/styles/zc.css" type="text/css"/>
         <!-- endbuild -->
@@ -27,13 +31,15 @@
         <main ui-view ></main>
 
         <!-- build:js(.) scripts/main.min.js -->
-        <script src="jspm_packages/traceur-runtime.js"></script>
+        <!--<script src="jspm_packages/github/jmcriffey/bower-traceur-runtime@0.0.88/traceur-runtime.js"></script>-->
         <!-- inject:build:js -->
         <!-- endinject -->
         <!-- endbuild -->
 
         <!-- build:remove -->
         <script src="jspm_packages/system.js"></script>
+        <!--<script src="jspm_packages/github/systemjs/systemjs@0.18.3/dist/system.js"></script>-->
+        <script src="jspm_packages/github/artursmirnov/tinymce_builded@4.1.9/js/tinymce/tinymce.js"></script>
         <script src="jspm.conf.js"></script>
         <script>
             System.import('core/boot/bootstrap').catch(console.error.bind(console)); // make sure any errors are print to console

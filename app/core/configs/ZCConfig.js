@@ -2,7 +2,7 @@
 
 import {ZC_CONST} from '../consts/ZCConst';
 
-export function ZCConfig($locationProvider, $provide, $urlRouterProvider, RestangularProvider, $translateProvider, uiSelectConfig, uiDateConfig) {
+export function ZCConfig($locationProvider, $provide, $urlRouterProvider, $translateProvider, $modalProvider, uiSelectConfig, uiDateConfig) {
     'ngInject';
     // use the HTML5 History API
     $locationProvider.html5Mode(true);
@@ -17,7 +17,7 @@ export function ZCConfig($locationProvider, $provide, $urlRouterProvider, Restan
     $urlRouterProvider.otherwise('/index');
     $urlRouterProvider.when('/', '/index');
 
-    RestangularProvider.setBaseUrl(ZC_CONST.BASE_API_URL);
+    //RestangularProvider.setBaseUrl(ZC_CONST.BASE_API_URL);
 
     $translateProvider.useLoader('$translatePartialLoader', {
         urlTemplate: '{part}/i18n/{lang}.json'
@@ -31,23 +31,30 @@ export function ZCConfig($locationProvider, $provide, $urlRouterProvider, Restan
     uiDateConfig.changeYear = true;
     //uiDateConfig.regional = 'zh-CN';
 
+    $modalProvider.options.animation = false;
 }
 
 export function ZCConfigOnRun($rootScope, $translate) {
     'ngInject';
 
     $rootScope.$on('$stateChangeStart',
-        function(event, toState){
+        function(event, toState, toParams){
             console.debug(toState);
+            console.debug(toParams);
             let s = new Set();
             ZC_CONST.NOT_REQUIRED_AUTH.map(x => s.add(x));
 
             if(!s.has(toState.name)){
-                event.preventDefault();
+                //event.preventDefault();
             }
 
         }
     );
+
+    $rootScope.$on('$stateChangeError',
+        function(event, toState, toParams, fromState, fromParams, error){
+            console.debug(error);
+        });
 
     $rootScope.$on('$translatePartialLoaderStructureChanged', function () {
         $translate.refresh();

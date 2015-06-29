@@ -1,4 +1,12 @@
 'use strict';
+import $ from 'jquery';
+
+export class ZCCheckModel{
+    constructor(){
+        this.isRight = false;
+        this.data = {};
+    }
+}
 
 export function zcTrim(o) {
     if (o instanceof String || typeof o === 'string') {
@@ -7,9 +15,6 @@ export function zcTrim(o) {
         for (var i in o) {
             if (o[i] instanceof String || typeof o === 'string') {
                 o[i] = o[i].trim();
-            }
-            if (o[i] instanceof Object || typeof o === 'object') {
-                o[i] = zcTrim(o[i]);
             }
             if (o[i] instanceof Array) {
                 for (var j = 0; j < o[i].length; j++) {
@@ -22,54 +27,43 @@ export function zcTrim(o) {
 }
 
 export function setItemFocus(elementId) {
-    /*jslint evil: true */
-    var str = 'document.getElementById(\'' + elementId + '\').type.toLowerCase()';
-    str = eval(str);
+    var ele = $('#' + elementId);
+    var str = ele[0].type.toLowerCase();
     switch (str) {
         case 'text':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
-            str = 'document.getElementById(\'' + elementId + '\').select()';
-            str = eval(str);
+            $('#' + elementId).focus();
+            $('#' + elementId).select();
             break;
-
         case 'password':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
-            str = 'document.getElementById(\'' + elementId + '\').select()';
-            str = eval(str);
+            $('#' + elementId).focus();
+            $('#' + elementId).select();
             break;
 
         case 'select-one':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
+            $('#' + elementId).focus();
             break;
 
         case 'radio':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
+            $('#' + elementId).focus();
             break;
 
         case 'select-multiple':
         case 'radio':
         case 'file':
         case 'textarea':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
-            str = 'document.getElementById(\'' + elementId + '\').select()';
-            str = eval(str);
+            $('#' + elementId).focus();
+            $('#' + elementId).select();
             break;
 
         case 'button':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
+            $('#' + elementId).focus();
             break;
 
         case 'checkbox':
-            str = 'document.getElementById(\'' + elementId + '\').focus()';
-            str = eval(str);
+            $('#' + elementId).focus();
             break;
         case 'submit':
+            $('#' + elementId).focus();
             break;
         default:
             break;

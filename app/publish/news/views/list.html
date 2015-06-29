@@ -1,0 +1,79 @@
+
+<div ng-if="newsList.$scope.newsShow.list" >
+    <div zc-container class="zc-row-margin zc-overflow-y" zc-height="$(window).height() - 50">
+        <form class="form-horizontal" role="form" >
+            <div class="form-group zc-row-margin-bottom">
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_LIST_TYPE' | translate}}</label>
+                <div class="col-md-2 col-lg-2 ">
+                    <ui-select ng-model="newsList.publishNewsListVO.newsTypeId" id="newsTypeId">
+                        <ui-select-match >{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="newsType.id.code as newsType in newsList.newsTypeList | ZCSelectFilter: {name: $select.search}">
+                            <span ng-bind-html="newsType.name | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_LIST_AUTHOR' | translate}}</label>
+                <div class="col-md-2 col-lg-2 ">
+                    <input type="text" class="form-control" ng-model="newsList.publishNewsListVO.authorName" >
+                </div>
+                <div class="col-md-6 col-lg-6 text-center" >
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="homeHeaderFlag"
+                               ng-true-value="1" ng-false-value="0" ng-model="newsList.publishNewsListVO.homeHeaderFlag">
+                        {{'TXT_NEWS_LIST_SHOW_IN_HOME_HEADER' | translate}}
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox"  id="typeHeaderFlag"
+                               ng-true-value="1" ng-false-value="0" ng-model="newsList.publishNewsListVO.typeHeaderFlag">
+                        {{'TXT_NEWS_LIST_SHOW_IN_TYPE_HEADER' | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_LIST_STATUS' | translate}}</label>
+                <div class="col-md-2 col-lg-2 ">
+                    <ui-select ng-model="newsList.publishNewsListVO.status"
+                               id="newsStatusId">
+                        <ui-select-match >{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="newsStatus.id.code as newsStatus in newsList.newsStatusList | ZCSelectFilter: {name: $select.search}"
+                                >
+                            <span ng-bind-html="newsStatus.name | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_LIST_DATE' | translate}}</label>
+                <div class="col-md-2 col-lg-2 ">
+                    <input ui-date class="form-control"
+                           ng-model="newsList.publishNewsListVO.startDate"
+                           placeholder="{{'TXT_NEWS_LIST_DATE_FROM' | translate}}">
+                </div>
+                <div class="col-md-2 col-lg-2 ">
+                    <input ui-date class="form-control"
+                           ng-model="newsList.publishNewsListVO.endDate"
+                           placeholder="{{'TXT_NEWS_LIST_DATE_TO' | translate}}">
+                </div>
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_LIST_LIKE' | translate}}</label>
+
+                <div class="col-md-2 col-lg-2 ">
+                    <input type="text" class="form-control" ng-model="newsList.publishNewsListVO.newsTitle" >
+                </div>
+                <div class="col-md-1 col-lg-1 text-center" >
+                    <button type="button" class="btn btn-primary " ng-click="newsList.searchNews()">
+                        {{'TXT_NEWS_LIST_SEARCH' | translate}}
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div ui-i18n="{{newsList.languageIdLower}}"  >
+            <div  ui-grid="newsList.$scope.gridOptions"  ui-grid-pagination ui-grid-selection
+                  zc-height="newsList.$scope.initGridHeight()"
+                  style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div  ng-if="newsList.$scope.newsShow.add"  ui-view></div>

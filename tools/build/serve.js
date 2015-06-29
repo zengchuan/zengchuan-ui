@@ -44,7 +44,8 @@ module.exports = function (gulp, plugins, config, params) {
      * The 'serve.dev' task serve the dev environment.
      */
     gulp.task('serve.dev', 'Serve for the dev environment', ['scss', 'copyIndex', 'watch'], function() {
-        startBrowserSync(['.tmp', 'app', 'jspm_packages', './' ]);
+        //startBrowserSync(['.tmp', 'app', 'jspm_packages', './' ]);
+        startBrowserSync(['.tmp', 'app', 'jspm_packages', './' ], proxyMiddleware);
         //startBrowserSync(['.tmp', 'app', 'jspm_packages', './' ]);
     });
 

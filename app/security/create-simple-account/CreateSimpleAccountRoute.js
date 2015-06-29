@@ -2,7 +2,7 @@
 
 import createSimpleAccount from './views/create-simple-account.html!text';
 
-function SecurityRoute($stateProvider) {
+function CreateSimpleAccountRoute($stateProvider) {
     'ngInject';
     return $stateProvider
         .state('create-simple-account', {
@@ -20,4 +20,4 @@ function SecurityRoute($stateProvider) {
         ;
 }
 
-export default SecurityRoute;
+export default CreateSimpleAccountRoute;

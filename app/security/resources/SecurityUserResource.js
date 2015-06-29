@@ -1,18 +1,24 @@
 class SecurityUserResource {
 
-    constructor(Restangular) {
+    constructor(ZCHttpService) {
         'ngInject';
-        this.Restangular = Restangular;
+        this.ZCHttpService = ZCHttpService;
     }
 
     createSimpleAccount(createSimpleAccountVO) {
-        return this.Restangular
-            .all('security-user').all('simple-account').post(createSimpleAccountVO);
+        return this.ZCHttpService.post('security-user/simple-account', createSimpleAccountVO);
     }
 
     login(loginVO) {
-        return this.Restangular
-            .all('security-user').all('login').post(loginVO);
+        return this.ZCHttpService.post('security-user/login', loginVO);
+    }
+
+    getLoginInfo(userId, languageId){
+        return this.ZCHttpService.get('security-user/login-info' + '/' + userId + '/' + languageId);
+    }
+
+    getRolesInfo(roleId, languageId){
+        return this.ZCHttpService.get('security-user/login-info-role' + '/' + roleId  + '/' + languageId);
     }
 }
 

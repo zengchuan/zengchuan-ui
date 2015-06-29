@@ -38,7 +38,7 @@ module.exports = function (gulp, plugins, config, params) {
         ['htmlhint', 'scss', 'bundle'], function () {
             var projectHeader = plugins.header(banner(params.pkg));
 
-            return gulp.src(config.paths.app.htmlDev)
+            return gulp.src(config.paths.app.htmlProd)
                 .pipe(plugins.inject(gulp.src(config.paths.tmp.scripts + 'build.js', {read: false}), {
                     starttag: '<!-- inject:build:js -->',
                     ignorePath: [config.paths.app.basePath]

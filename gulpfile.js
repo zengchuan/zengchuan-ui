@@ -42,6 +42,6 @@ serve(gulp, plugins, config, params);
 unit(gulp, plugins, config, params);
 watch(gulp, plugins, config, params);
 
-gulp.task('default', 'Watch files and build environment', runSequence(['clean', 'serve.dev']));
-//gulp.task('default', 'Watch files and build environment', runSequence(['clean', 'serve.prod']));
+//gulp.task('default', 'Watch files and build environment', runSequence(['clean', 'serve.dev']));
+gulp.task('default', 'Watch files and build environment', runSequence(['clean', 'serve.prod']));
 //gulp.task('default', 'Watch files and build environment', runSequence(['clean', 'serve.dev', 'e2eTests']));

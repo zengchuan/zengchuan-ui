@@ -1,0 +1,129 @@
+﻿<div class="news-add" >
+
+    <div zc-container class="zc-row-margin zc-overflow-y" zc-height="$(window).height() - 110">
+        <form class="form-horizontal" role="form">
+            <div class="form-group zc-row-margin-bottom">
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_TITLE' | translate}}</label>
+
+                <div class="col-md-11 col-lg-11 ">
+                    <input type="text" id="newsTitle" class="form-control" ng-model="newsAdd.publishNewsMaster.newsTitle"
+                           autofocus="">
+                </div>
+            </div>
+            <div class="form-group zc-row-margin-bottom">
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_TYPE' | translate}}</label>
+
+                <div class="col-md-2 col-lg-2 ">
+                    <ui-select ng-model="newsAdd.publishNewsMaster.newsTypeId"
+                               id="newsTypeId">
+                        <ui-select-match >{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="newsType.id.code as newsType in newsAdd.newsTypeList | ZCSelectFilter: {name: $select.search}"
+                                >
+                            <span ng-bind-html="newsType.name | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_AUTHOR' | translate}}</label>
+
+                <div class="col-md-2 col-lg-2 ">
+                    <input type="text" class="form-control" ng-model="newsAdd.publishNewsMaster.authorName" zc-remove>
+                </div>
+                <div class="col-md-6 col-lg-6 text-center">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="homeHeaderFlag"
+                               ng-true-value="1" ng-false-value="0" ng-model="newsAdd.publishNewsMaster.homeHeaderFlag">
+                        {{'TXT_NEWS_SHOW_IN_HOME_HEADER' | translate}}
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="typeHeaderFlag"
+                               ng-true-value="1" ng-false-value="0" ng-model="newsAdd.publishNewsMaster.typeHeaderFlag">
+                        {{'TXT_NEWS_SHOW_IN_TYPE_HEADER' | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group zc-row-margin-bottom" ng-repeat="publishNewsDetailVO in newsAdd.publishNewsDetailVOList">
+                <label class="col-md-1 col-lg-1 control-label">{{'TXT_NEWS_SEGMENT' | translate}}{{$index + 1}}</label>
+
+                <div class="col-md-2 col-lg-2 ">
+                    <ui-select ng-model="publishNewsDetailVO.contentFormatId"
+                               id="contentFormatId{{$index}}"
+                               ng-change="newsAdd.changeNewsFormat($index)"
+                               ng-disabled="!publishNewsDetailVO.isNew">
+                        <ui-select-match>{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="newsFormat.id.code as newsFormat in newsAdd.newsFormatList"
+                                >
+                            <span ng-bind-html="newsFormat.name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="col-md-7 col-lg-7 " ng-show="publishNewsDetailVO.contentFormatId === '1'">
+                    <textarea class="form-control"
+                              ui-tinymce="newsAdd.tinymceOptionsPublishNews"
+                              ng-model="publishNewsDetailVO.contentTxt"
+                              ></textarea>
+                </div>
+                <div class="col-md-3 col-lg-3 " ng-if="publishNewsDetailVO.contentFormatId === '2' || publishNewsDetailVO.contentFormatId === '3' ">
+                    <input type="text" class="form-control" ng-model="publishNewsDetailVO.contentTxt"
+                           placeholder="{{'TXT_NEWS_IMAGE_MEMO' | translate}}">
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="publishNewsDetailVO.contentFormatId === '2' && publishNewsDetailVO.isNew">
+                    <div zc-file="newsAdd.file.newsFile" zc-file-change="newsAdd.readNewsFile($index)" zc-file-accept="*"></div>
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="publishNewsDetailVO.contentFormatId === '3' && publishNewsDetailVO.isNew">
+                    <div zc-file="newsAdd.file.newsFile" zc-file-change="newsAdd.readNewsFileVideo($index)" zc-file-accept="*"></div>
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowImageData($index)">
+                    <img class="news-image" ng-src="{{newsAdd.getImageData($index)}}">
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowVideoData($index)">
+                    <video controls autoplay height="100px" id="newsVideo{{$index}}"></video>
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowImageDataFromServer($index)">
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowImageDataFromServer($index)">
+                    <img class="news-image" ng-src="{{newsAdd.getImageDataFromServer($index)}}">
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowVideoDataFromServer($index)">
+                </div>
+                <div class="col-md-2 col-lg-2 " ng-if="newsAdd.isShowVideoDataFromServer($index)">
+                    <video controls preload="none" height="100px" id="newsVideoOld{{$index}}"
+                           ng-src="{{newsAdd.getImageDataFromServer($index)}}"
+                           poster="{{newsAdd.getVideoPosterFromServer($index)}}"></video>
+                </div>
+                <div class="col-md-2 col-lg-2 text-right">
+                    <a ng-if="publishNewsDetailVO.contentFormatId === '3' "
+                       ng-click="newsAdd.captureVideo($index)" class="fa fa-camera-retro">
+                    </a>
+                    <a ng-click="newsAdd.minusOneNews($index)" class="fa fa-minus-circle">
+                    </a>
+                    <a ng-click="newsAdd.upOneNews($index)" class="fa fa-arrow-circle-up">
+                    </a>
+                    <a ng-click="newsAdd.downOneNews($index)" class="fa fa-arrow-circle-down">
+                    </a>
+                    <a ng-click="newsAdd.plusOneNews($index)" class="fa fa-plus-circle">
+                    </a>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <footer class="navbar navbar-fixed-bottom zc-border-line-top zc-footer">
+        <div zc-container class="text-center">
+            <button type="button" class="btn btn-primary " ng-click="newsAdd.commitNews()" title="{{'TXT_NEWS_COMMIT_TITLE' | translate}}">{{'TXT_NEWS_COMMIT' | translate}}
+            </button>
+            <button type="button" class="btn btn-primary " ng-click="newsAdd.saveNews()">{{'TXT_NEWS_SAVE' | translate}}
+            </button>
+            <button type="button" class="btn btn-primary " ng-click="newsAdd.viewNews()">{{'TXT_NEWS_VIEW' | translate}}
+            </button>
+            <button type="button" class="btn btn-primary " ng-click="newsAdd.resetPage()">{{'TXT_NEWS_RESET' | translate}}
+            </button>
+            <button type="button" class="btn btn-primary " ng-click="newsAdd.backPage()">{{'TXT_NEWS_BACK' | translate}}
+            </button>
+        </div>
+    </footer>
+</div>
+
+<ui-view/>

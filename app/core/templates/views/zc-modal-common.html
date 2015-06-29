@@ -1,0 +1,11 @@
+<div class="modal-body" >
+    <div class="zc-modal-common" zc-height="$(window).height() - 200">
+        <div ui-view="modal"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn" id="zcModalCommonCloseButton"
+            data-ng-click="zcmcn.close()">
+        {{'TXT_ZC_MODAL_CLOSE' | translate}}
+    </button>
+</div>

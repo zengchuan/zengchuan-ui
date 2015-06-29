@@ -1,0 +1,35 @@
+<div class="news-view">
+
+    <div class="news-title">
+        <h1 class="text-center"><strong>{{newsView.publishNewsMaster.newsTitle}}</strong></h1>
+        <p class="text-center news-info">{{newsView.publishNewsMaster.updateDate | date:'yyyy-MM-dd HH:mm' }} {{newsView.publishNewsMaster.authorName}}</p>
+    </div>
+
+    <div ng-if="newsView.isShowVideoData()" >
+        <video controls class="text-center news-video" preload="none"
+               poster="{{newsView.publishNewsVideoSelected.poster}}"
+               ng-src="{{newsView.publishNewsVideoSelected.url}}"></video>
+        <div ng-if="newsView.isShowVideoList()" class="news-poster-list">
+                <span ng-repeat="publishNewsVideo in newsView.publishNewsVideoList" class="news-poster-info">
+                    <a ng-click="newsView.changeNewVideo(publishNewsVideo)" >
+                        <img class="news-poster" ng-class="newsView.getSelectedVideoStyle(publishNewsVideo)" title="{{newsView.publishNewsVideo.txt}}" ng-src="{{publishNewsVideo.poster}}" >
+                        <s class="play_icon glyphicon glyphicon-play-circle"></s>
+                    </a>
+                </span>
+        </div>
+    </div>
+
+    <div ng-repeat="publishNewsDetail in newsView.publishNewsDetailVOList">
+        <p class="news-segment" ng-if="publishNewsDetail.contentFormatId === '1'"
+           ng-bind-html="publishNewsDetail.contentTxt">
+        </p>
+
+        <div ng-if="newsView.isShowImageData($index)" >
+            <img class="news-image" ng-src="{{newsView.getImageData($index)}} " >
+            <p class="text-center" ng-if="publishNewsDetail.contentTxt.length > 0"
+               ng-bind-html="publishNewsDetail.contentTxt">
+            </p>
+        </div>
+
+    </div>
+</div>

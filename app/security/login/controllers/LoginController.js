@@ -2,12 +2,13 @@ import {LoginVO} from '../models/LoginModel';
 import {zcTrim} from '../../../core/services/ZCUtilService';
 
 class LoginController {
-    constructor($q, $state, $translatePartialLoader, $translate, languageId, commLanguageList, ZCCommLanguageResource, ZCModalService, ZCCheckService, SecurityUserResource) {
+    constructor($q, $window, $state, $translatePartialLoader, $translate, languageId, commLanguageList, ZCCommLanguageResource, ZCModalService, ZCCheckService, SecurityUserResource) {
         'ngInject';
         this.loginVO = new LoginVO();
         this.loginVO.languageId = languageId;
         this.$translate = $translate;
         this.$q = $q;
+        this.$window = $window;
         this.ZCCommLanguageResource = ZCCommLanguageResource;
         this.commLanguageList = commLanguageList;
         console.log(this.commLanguageList);
@@ -33,6 +34,9 @@ class LoginController {
             if(data){
                 this.SecurityUserResource.login(this.loginVO).then(function (response) {
                     console.debug(response.securityUser);
+                    this.$window.sessionStorage.setItem('securityUser', angular.toJson(response.securityUser));
+                    this.$window.sessionStorage.setItem('zc-token', angular.toJson(response.randomFlg));
+                    this.$state.go('main.welcome');
                 }.bind(this), function errorCallback(response) {
                     console.debug(response);
                     this.ZCModalService.showError(response.data);

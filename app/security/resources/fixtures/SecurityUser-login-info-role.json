@@ -1,0 +1,144 @@
+{
+  "securityRoleVOList": [
+    {
+      "roleId": "1",
+      "roleName": "Administrator",
+      "centerId": "1",
+      "deptId": null,
+      "centerName": "秀总部",
+      "deptName": null
+    },
+    {
+      "roleId": "2",
+      "roleName": "CenterAdministrator",
+      "centerId": "1",
+      "deptId": null,
+      "centerName": "秀总部",
+      "deptName": null
+    }
+  ],
+  "securityRoleVO": {
+    "roleId": "1",
+    "roleName": "Administrator",
+    "centerId": "1",
+    "deptId": null,
+    "centerName": "秀总部",
+    "deptName": null
+  },
+  "programVOListOne": [
+    {
+      "programId": "001",
+      "parentProgramId": "-1",
+      "uri": null,
+      "levelId": 1,
+      "programLevel": "001",
+      "sortNo": 1,
+      "programName": "聊天室",
+      "programConfigVOList": null
+    },
+    {
+      "programId": "002",
+      "parentProgramId": "-1",
+      "uri": null,
+      "levelId": 1,
+      "programLevel": "002",
+      "sortNo": 2,
+      "programName": "秀程序",
+      "programConfigVOList": null
+    },
+    {
+      "programId": "003",
+      "parentProgramId": "-1",
+      "uri": null,
+      "levelId": 1,
+      "programLevel": "003",
+      "sortNo": 3,
+      "programName": "发布",
+      "programConfigVOList": null
+    }
+  ],
+  "programVOListTwo": [
+    {
+      "programId": "001001",
+      "parentProgramId": "001",
+      "uri": null,
+      "levelId": 2,
+      "programLevel": "001/001001",
+      "sortNo": 1001,
+      "programName": "聊天室程序管理",
+      "programConfigVOList": null
+    },
+    {
+      "programId": "002001",
+      "parentProgramId": "002",
+      "uri": null,
+      "levelId": 2,
+      "programLevel": "002/002001",
+      "sortNo": 2001,
+      "programName": "秀程序管理",
+      "programConfigVOList": null
+    },
+    {
+      "programId": "003001",
+      "parentProgramId": "003",
+      "uri": null,
+      "levelId": 2,
+      "programLevel": "003/003001",
+      "sortNo": 3001,
+      "programName": "发布程序管理",
+      "programConfigVOList": null
+    }
+  ],
+  "programVOListThree": [
+    {
+      "programId": "001001001",
+      "parentProgramId": "001001",
+      "uri": "html/security/chat/index.html",
+      "levelId": 3,
+      "programLevel": "001/001001/001001001",
+      "sortNo": 1001001,
+      "programName": "聊天室",
+      "programConfigVOList": []
+    },
+    {
+      "programId": "002001001",
+      "parentProgramId": "002001",
+      "uri": "html/xiur/base-xiur/index.html",
+      "levelId": 3,
+      "programLevel": "002/002001/002001001",
+      "sortNo": 2001001,
+      "programName": "秀出自己",
+      "programConfigVOList": []
+    },
+    {
+      "programId": "003001001",
+      "parentProgramId": "003001",
+      "uri": "html/publish/news/index.html",
+      "levelId": 3,
+      "programLevel": "003/003001/003001001",
+      "sortNo": 3001001,
+      "programName": "新闻发布",
+      "programConfigVOList": []
+    },
+    {
+      "programId": "003001002",
+      "parentProgramId": "003001",
+      "uri": "html/publish/news-list/index.html#/1",
+      "levelId": 3,
+      "programLevel": "003/003001/003001002",
+      "sortNo": 3001002,
+      "programName": "新闻提交",
+      "programConfigVOList": []
+    },
+    {
+      "programId": "003001003",
+      "parentProgramId": "003001",
+      "uri": "html/publish/news-list/index.html#/2",
+      "levelId": 3,
+      "programLevel": "003/003001/003001002",
+      "sortNo": 3001003,
+      "programName": "新闻审核",
+      "programConfigVOList": []
+    }
+  ]
+}

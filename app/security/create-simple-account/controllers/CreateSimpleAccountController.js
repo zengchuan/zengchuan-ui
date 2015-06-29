@@ -35,10 +35,7 @@ class CreateSimpleAccountController {
 
     checkForm(){
         let deferred = this.$q.defer();
-        let modalOptions = {
-            type: 'WARN',
-            bodyText: ''
-        };
+        let modalOptions = this.ZCModalService.getModalOption('WARN');
         this.$translate('TXT_CREATE_SIMPLE_ACCOUNT_USER_CODE').then(function (translation) {
             if (this.ZCCheckService.isNotNull(this.createSimpleAccountVO.securityUser.userCode, translation, 'userCode')) {
                 deferred.resolve(false);

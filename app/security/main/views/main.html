@@ -1,0 +1,53 @@
+<div class="navbar navbar-inverse navbar-fixed-top zc-header" role="navigation"
+        ng-show="mainc.show.showHeader"
+        ng-mouseleave="mainc.notShowHeader()"
+        >
+    <div zc-container>
+        <div class="navbar-header" ng-class="mainc.getActiveHeader('Home')" >
+            <a class="navbar-brand" href="#" ng-click="mainc.goHome()">{{'TXT_MAIN_HEADER' | translate}}</a>
+        </div>
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown " ng-repeat="programVOOne in mainc.loginInfoVO.programVOListOne"
+                    ng-class="mainc.getActiveHeader(programVOOne.programName)">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown">{{programVOOne.programName}}</a>
+
+                    <ul class="dropdown-menu" ng-init="programs=mainc.getPrograms(programVOOne.programId)">
+                        <li ng-repeat="program in programs"
+                            ng-class="mainc.getProgramClass(program.isDivider)">
+                            <a href="#" ng-click="mainc.clickProgram(program, programVOOne.programName)">{{program.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="#">{{mainc.getUserInfo()}}</a></li>
+                <li class="dropdown" ng-show="mainc.isMultipleRoles()">
+                    <a hrf="#" class="dropdown-toggle" data-toggle="dropdown">切<b class="caret"></b></a>
+                    <ul class="dropdown-menu" ng-show="mainc.isSameCenter()">
+                        <li ng-repeat="securityRoleVO in mainc.loginInfoVO.securityRoleVOList">
+                            <a href="#" ng-click="mainc.changeRole(mainc.securityRoleVO)">{{mainc.securityRoleVO.roleName}}</a>
+                        </li>
+                    </ul>
+                    <ul class="dropdown-menu" ng-show="!mainc.isSameCenter()">
+                        <li ng-repeat="securityRoleVO in mainc.loginInfoVO.securityRoleVOList">
+                            <a href="#" ng-click="mainc.changeRole(securityRoleVO)">
+                                <span class="role-name">{{mainc.getCenterName(securityRoleVO.centerName)}}</span>
+                                <span class="role-name">{{securityRoleVO.roleName}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-class="mainc.getActiveHeader('Unregist')"><a href="#" ng-click="mainc.goLogin()">{{'TXT_MAIN_UNREGIST' | translate}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="zcShowHeader" class="zcShowHeader" ng-mouseenter="mainc.showHeader(true)"  >
+</div>
+
+<div class="zcShowCenter" >
+    <ui-view ></ui-view>
+</div>

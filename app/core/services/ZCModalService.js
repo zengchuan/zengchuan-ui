@@ -157,6 +157,14 @@ class ZCModalService {
         return deferred.promise;
     }
 
+    getModalOption(type){
+        let zcModalOptions = new ZCModalOptions();
+        if(type){
+            zcModalOptions.type = type;
+        }
+        return zcModalOptions;
+    }
+
 }
 
 export default ZCModalService;

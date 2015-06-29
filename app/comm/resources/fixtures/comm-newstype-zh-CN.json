@@ -1,0 +1,62 @@
+[
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "1"
+    },
+    "name": "综合",
+    "inputCode": "ZH",
+    "memo": null,
+    "sortNo": 1
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "2"
+    },
+    "name": "政经",
+    "inputCode": "ZJ",
+    "memo": null,
+    "sortNo": 2
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "3"
+    },
+    "name": "财经",
+    "inputCode": "CJ",
+    "memo": null,
+    "sortNo": 3
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "4"
+    },
+    "name": "体育",
+    "inputCode": "TY",
+    "memo": null,
+    "sortNo": 4
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "5"
+    },
+    "name": "军事",
+    "inputCode": "JS",
+    "memo": null,
+    "sortNo": 5
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "9"
+    },
+    "name": "其他",
+    "inputCode": "QT",
+    "memo": null,
+    "sortNo": 9
+  }
+]

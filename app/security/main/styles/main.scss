@@ -1,0 +1,32 @@
+ul.navbar-left li.dropdown:hover > ul.dropdown-menu {
+  display: block;
+}
+.zcShowHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #d1dfee;
+  /*border: 1px solid blueviolet;*/
+}
+
+.zcShowCenter{
+  position: fixed;
+  top: 3px;
+  left: 0;
+  width: 100%;
+}
+
+.tab-pane-zc{
+  padding: 0px;
+  margin: 0px;
+  /*border: 1px solid #DDDDDD;*/
+  width: 100%;
+}
+
+.role-name{
+  min-width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+}

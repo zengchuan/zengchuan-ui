@@ -1,12 +1,12 @@
+
 class ZCCommLanguageResource {
-    constructor(Restangular) {
+    constructor(ZCHttpService) {
         'ngInject';
-        this.Restangular = Restangular;
+        this.ZCHttpService = ZCHttpService;
     }
 
     getCommLanguageById(id) {
-        return this.Restangular
-            .all('comm-language').all(id).getList();
+        return this.ZCHttpService.get('comm-language/' + id);
     }
 }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "1"
+    },
+    "name": "文字",
+    "inputCode": "WZ",
+    "memo": null,
+    "sortNo": 1
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "2"
+    },
+    "name": "图片",
+    "inputCode": "TP",
+    "memo": null,
+    "sortNo": 2
+  },
+  {
+    "id": {
+      "languageId": "zh-CN",
+      "code": "3"
+    },
+    "name": "视频",
+    "inputCode": "SP",
+    "memo": null,
+    "sortNo": 3
+  }
+]

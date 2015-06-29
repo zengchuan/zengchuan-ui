@@ -1,0 +1,25 @@
+{
+  "securityUser": {
+    "userId": "1",
+    "userCode": "1",
+    "birthday": null,
+    "sex": null,
+    "userName": "管理员",
+    "inputCode": null,
+    "tel1": null,
+    "tel2": null,
+    "mobile": null,
+    "fax": null,
+    "mail": null,
+    "netAddress": null,
+    "remark": null,
+    "createDate": null,
+    "createUserId": null,
+    "createCompId": null,
+    "updateDate": null,
+    "updateUserId": null,
+    "updateCompId": null
+  },
+  "randomFlg": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyYW5kb21GbGFnIjoiMC43MjIzMTIxMjg0NDc4NTQ0IiwibG9naW5JZCI6IjIwMTUwMzE2MDAwMDAwMDAwMiJ9.vE8mORroZTjdsuUHNMSv9adwohRgNH21JgBPnF8iJE4",
+  "languageId": "zh-CN"
+}
